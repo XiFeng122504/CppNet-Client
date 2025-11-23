@@ -1,6 +1,6 @@
-# VimUsing Client
+# CppNet-Client
 
-基于Qt5的VimUsing服务器客户端程序。
+基于Qt5的CppNet-Client服务器客户端程序。
 
 ## 功能特性
 
@@ -30,7 +30,7 @@ client/
 ### 1. 配置环境变量
 
 ```bash
-export Qt5_DIR=/Volumes/SolidDisk/QT5.12/5.12.12/clang_64
+export Qt5_DIR=/path/to/your/qt5.12/xx_64
 export PATH=$Qt5_DIR/bin:$PATH
 ```
 
