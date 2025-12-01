@@ -17,11 +17,13 @@
 ## 项目结构
 
 ```
-client/
+QtClient/
 ├── core/          # 核心模块（协议、网络）
 ├── services/      # 业务逻辑层
 ├── models/        # 数据模型
 ├── ui/            # 用户界面
+├── draft/         # 测试代码
+├── docs/          # 文档（git submodule）
 └── main.cpp       # 程序入口
 ```
 
@@ -62,28 +64,37 @@ make
 ## 开发进度
 
 - [x] 项目结构搭建
-- [ ] 协议层实现
-- [ ] 网络通信层实现
-- [ ] 认证服务实现
-- [ ] 文件上传服务实现
+- [x] 协议层实现
+- [x] 网络通信层实现
+- [x] 认证服务实现
+- [x] 文件上传服务实现
+- [x] Echo服务实现
 - [ ] UI界面实现
+- [ ] 集成测试
 
 ## 协议说明
 
-VimUsing使用自定义二进制协议：
+CppNet 使用自定义二进制协议：
 
 ```
 [1字节: MessageType] [4字节: Payload长度] [N字节: Payload]
 ```
 
 消息类型：
-- `1` - LoginRequest
-- `2` - EchoRequest
-- `3` - FileUploadBegin
-- `4` - FileUploadChunk
-- `5` - FileUploadEnd
-- `100` - Ack
-- `101` - Error
+- `1` - LoginRequest (客户端→服务器)
+- `2` - EchoRequest (客户端→服务器)
+- `3` - FileUploadBegin (客户端→服务器)
+- `4` - FileUploadChunk (客户端→服务器)
+- `5` - FileUploadEnd (客户端→服务器)
+- `100` - Ack (服务器→客户端)
+- `101` - Error (服务器→客户端)
+
+## 文档
+
+详细的学习文档位于 `docs/QtCSLearn/QtClient/` 目录：
+- `AI-GUIDE.md` - AI 助手指导文档
+- `LEARNING-LOG.md` - 详细学习日志
+- `OVERVIEW.md` - 项目总览
 
 ## 许可证
 
